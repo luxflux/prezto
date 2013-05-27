@@ -32,7 +32,12 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt'
+  'prompt' \
+  'syntax-highlighting' \
+  'ssh' \
+  'history-substring-search' \
+  'ruby' \
+  'git'
 
 #
 # Editor
@@ -42,7 +47,7 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' keymap 'emacs'
 
 # Auto convert .... to ../..
-# zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 #
 # Git
@@ -63,10 +68,10 @@ zstyle ':prezto:module:editor' keymap 'emacs'
 #
 
 # Set the query found color.
-# zstyle ':prezto:module:history-substring-search:color' found ''
+zstyle ':prezto:module:history-substring-search:color' found ''
 
 # Set the query not found color.
-# zstyle ':prezto:module:history-substring-search:color' not-found ''
+zstyle ':prezto:module:history-substring-search:color' not-found ''
 
 # Set the search globbing flags.
 # zstyle ':prezto:module:history-substring-search' globbing-flags ''
@@ -85,7 +90,7 @@ zstyle ':prezto:module:editor' keymap 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'skwp'
 
 #
 # Screen
@@ -99,7 +104,7 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 #
 
 # Set the SSH identities to load into the agent.
-# zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa_hq'
 
 #
 # Syntax Highlighting
@@ -107,12 +112,12 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'cursor' \
-#   'root'
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
+  'cursor' \
+  'root'
 #
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
@@ -135,3 +140,16 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 # Auto start a session when Zsh is launched.
 # zstyle ':prezto:module:tmux' auto-start 'yes'
 
+
+# Bindings
+bindkey "^[[5~" history-substring-search-up
+bindkey "~" history-substring-search-down
+bindkey "^[[1;5D" backward-word
+bindkey " " forward-word
+
+# Aliases
+alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+alias r='ssh -A raf'
+alias stree='/Applications/SourceTree.app/Contents/MacOS/SourceTree $(pwd)'
+alias rc='bundle exec rails c'
+alias qq='touch tmp/restart.txt'
