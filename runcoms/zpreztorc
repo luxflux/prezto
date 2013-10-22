@@ -162,3 +162,6 @@ alias changelog='~/Documents/Nine/git/changelog-generator/bin/shell-wrapper $(ca
 
 export EDITOR=/Users/raf/Applications/MacVim.app/Contents/MacOS/Vim
 export GIT_EDITOR=${EDITOR}
+
+# add git annex to path
+PATH=$PATH:/Applications/git-annex.app/Contents/MacOS/
