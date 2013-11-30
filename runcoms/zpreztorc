@@ -171,3 +171,5 @@ export GIT_EDITOR=${EDITOR}
 
 # add dotfilez bin to path
 PATH=$PATH:~/dotfiles/bin
+# add postgres app to path
+PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
