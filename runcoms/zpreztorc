@@ -163,7 +163,6 @@ bindkey " " forward-word
 alias vim=~/Applications/MacVim.app/Contents/MacOS/Vim
 alias mvim=/opt/homebrew-cask/Caskroom/macvim/7.3-66/MacVim-snapshot-66/mvim
 alias r='ssh -A raf.nine.ch'
-alias stree='/Applications/SourceTree.app/Contents/MacOS/SourceTree $(pwd)'
 alias rc='bundle exec rails c'
 alias src='spring rails c'
 alias qq='touch tmp/restart.txt'
