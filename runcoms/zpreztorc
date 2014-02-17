@@ -168,7 +168,6 @@ bindkey " " forward-word
 
 # Aliases
 alias vim=~/Applications/MacVim.app/Contents/MacOS/Vim
-alias mvim=/opt/homebrew-cask/Caskroom/macvim/7.3-66/MacVim-snapshot-66/mvim
 alias r='ssh -A raf.nine.ch'
 alias rc='bundle exec rails c'
 alias src='spring rails c'
@@ -176,6 +175,8 @@ alias qq='touch tmp/restart.txt'
 alias b='bundle'
 alias vagrant='/usr/bin/vagrant'
 alias changelog='~/Documents/Nine/git/changelog-generator/bin/shell-wrapper $(cat ~/.redmine_api_key)'
+
+alias rl='multitail -cT ansi log/(production|development|test).log -o markerline_color:blue -o markerline_timestamp:1 -o statusline_attrs:blue'
 
 export EDITOR=/Users/raf/Applications/MacVim.app/Contents/MacOS/Vim
 export GIT_EDITOR=${EDITOR}
