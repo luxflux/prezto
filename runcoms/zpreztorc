@@ -186,3 +186,5 @@ export VISUAL=${EDITOR}
 PATH=$PATH:~/dotfiles/bin
 # add postgres app to path
 PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
+# add npm modules to path
+PATH="/usr/local/share/npm/bin:$PATH"
