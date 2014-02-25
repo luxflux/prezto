@@ -188,3 +188,5 @@ PATH=$PATH:~/dotfiles/bin
 PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 # add npm modules to path
 PATH="/usr/local/share/npm/bin:$PATH"
+# android sdk
+PATH="$HOME/Applications/adt/sdk/platform-tools:$HOME/Applications/adt/sdk/tools:$PATH"
