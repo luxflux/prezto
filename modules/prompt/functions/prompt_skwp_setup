@@ -28,6 +28,16 @@ function prompt_skwp_precmd {
   fi
 }
 
+git_time_since_last_commit() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  local t=`git log -1 --pretty=format:"%ar" | sed 's/\([0-9]*\) \(.\).*/\1\2/'`
+  if [[ $t == *s ]] || [[ $t == *m ]]; then
+    echo "%{$fg[green]%}$t%{$reset_color%}"
+  else
+    echo "%{$fg[red]%}$t%{$reset_color%}"
+  fi
+}
+
 function prompt_skwp_setup {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
@@ -67,11 +77,9 @@ function prompt_skwp_setup {
   # ruby info (rvm, rbenv)
   zstyle ':prezto:module:ruby:info:version' format '%v'
 
-  PROMPT="${__PROMPT_SKWP_COLORS[3]}%n%f@${__PROMPT_SKWP_COLORS[2]}%m%f ${__PROMPT_SKWP_COLORS[5]}%~%f "'$git_info[prompt]'" "'%F{blue}${ruby_info[version]}'"
+  PROMPT="${__PROMPT_SKWP_COLORS[3]}%n%f@${__PROMPT_SKWP_COLORS[2]}%m%f ${__PROMPT_SKWP_COLORS[5]}%~%f "'$git_info[prompt]'" ${__PROMPT_SKWP_COLORS[5]}($(git_time_since_last_commit))%f "'%F{blue}${ruby_info[version]}'"
 "'%F{161}'"(╯°□°）╯︵ ┻━━━ "'%f'
   RPROMPT='%F{161}'"━━━┻"'%f'
-#"'%F{161}'"{}oo((X))ΞΞΞΞΞΞΞΞΞΞΞΞΞ> "'%f'
-  #RPROMPT='%F{blue}${ruby_info[version]}'
 }
 
 prompt_skwp_setup "$@"
