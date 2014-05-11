@@ -189,3 +189,5 @@ PATH=$PATH:~/dotfiles/bin
 PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 # add npm modules to path
 PATH="/usr/local/share/npm/bin:$PATH"
+# mkdir .git/safe in the root of repositories you trust
+PATH=".git/safe/../../bin:$PATH"
