@@ -173,8 +173,7 @@ alias rc='bundle exec rails c'
 alias src='spring rails c'
 alias qq='touch tmp/restart.txt'
 alias b='bundle'
-alias vagrant='/usr/bin/vagrant'
-alias changelog='~/Documents/Nine/git/changelog-generator/bin/shell-wrapper $(cat ~/.redmine_api_key)'
+alias netstat_osx="sudo lsof -i -P"
 
 alias rl='multitail -cT ansi log/(production|development|test).log -o markerline_color:blue -o markerline_timestamp:1 -o statusline_attrs:blue'
 alias nvim='VIMRUNTIME=~/Applications/MacVim.app/Contents/Resources/vim/runtime nvim'
