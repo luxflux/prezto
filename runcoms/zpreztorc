@@ -167,16 +167,16 @@ bindkey "^[[1;5D" backward-word
 bindkey " " forward-word
 
 # Aliases
-alias vim=~/Applications/MacVim.app/Contents/MacOS/Vim
+alias vim=nvim
 alias r='ssh -A raf.nine.ch'
 alias rc='bundle exec rails c'
 alias src='spring rails c'
 alias qq='touch tmp/restart.txt'
 alias b='bundle'
-alias vagrant='/usr/bin/vagrant'
-alias changelog='~/Documents/Nine/git/changelog-generator/bin/shell-wrapper $(cat ~/.redmine_api_key)'
+alias netstat_osx="sudo lsof -i -P"
 
 alias rl='multitail -cT ansi log/(production|development|test).log -o markerline_color:blue -o markerline_timestamp:1 -o statusline_attrs:blue'
+alias nvim='VIMRUNTIME=~/Applications/MacVim.app/Contents/Resources/vim/runtime nvim'
 
 export EDITOR=/Users/raf/Applications/MacVim.app/Contents/MacOS/Vim
 export GIT_EDITOR=${EDITOR}
@@ -188,5 +188,5 @@ PATH=$PATH:~/dotfiles/bin
 PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 # add npm modules to path
 PATH="/usr/local/share/npm/bin:$PATH"
-# android sdk
-PATH="$HOME/Applications/adt/sdk/platform-tools:$HOME/Applications/adt/sdk/tools:$PATH"
+# mkdir .git/safe in the root of repositories you trust
+PATH=".git/safe/../../bin:$PATH"
