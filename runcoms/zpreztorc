@@ -176,9 +176,9 @@ alias b='bundle'
 alias netstat_osx="sudo lsof -i -P"
 
 alias rl='multitail -cT ansi log/(production|development|test).log -o markerline_color:blue -o markerline_timestamp:1 -o statusline_attrs:blue'
-alias nvim='VIMRUNTIME=~/Applications/MacVim.app/Contents/Resources/vim/runtime nvim'
+alias nvim='VIMRUNTIME=/usr/share/vim/vim73 nvim'
 
-export EDITOR=/Users/raf/Applications/MacVim.app/Contents/MacOS/Vim
+export EDITOR=vim
 export GIT_EDITOR=${EDITOR}
 export VISUAL=${EDITOR}
 
