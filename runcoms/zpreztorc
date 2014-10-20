@@ -183,14 +183,6 @@ export EDITOR=vim
 export GIT_EDITOR=${EDITOR}
 export VISUAL=${EDITOR}
 
-# add dotfilez bin to path
-PATH=$PATH:~/dotfiles/bin
-# add postgres app to path
-PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
-# add npm modules to path
-PATH="/usr/local/share/npm/bin:$PATH"
-# mkdir .git/safe in the root of repositories you trust
-PATH=".git/safe/../../bin:$PATH"
 # add boxen
 if [ -f /opt/boxen/env.sh ]; then
   source /opt/boxen/env.sh

@@ -112,3 +112,7 @@ zstyle -a ':prezto:load' pmodule 'pmodules'
 pmodload "$pmodules[@]"
 unset pmodules
 
+# Source the Prezto configuration file.
+if [[ -s "${ZDOTDIR:-$HOME}/.zpreztorc.last" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zpreztorc.last"
+fi
