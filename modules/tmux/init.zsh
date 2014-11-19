@@ -41,16 +41,3 @@ fi
 
 alias tmuxa='tmux attach-session'
 alias tmuxl='tmux list-sessions'
-
-function tmux_rename_from_projectdir() {
-  emulate -L zsh
-  git symbolic-ref HEAD 2>/dev/null >/dev/null
-  if [ $? -eq 0 ]; then
-    window_name="$(basename "$(git rev-parse --show-toplevel)")"
-  else
-    window_name=${PWD//$HOME/\~}
-  fi
-  tmux rename-window "${window_name}"
-}
-
-chpwd_functions=(${chpwd_functions[@]} "tmux_rename_from_projectdir")
