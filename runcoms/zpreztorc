@@ -185,3 +185,7 @@ export VISUAL=${EDITOR}
 if [ -f /opt/boxen/env.sh ]; then
   source /opt/boxen/env.sh
 fi
+
+if [ -f ~/.zpreztorc.local ]; then
+  source ~/.zpreztorc.local
+fi
