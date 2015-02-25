@@ -176,6 +176,7 @@ alias qq='touch tmp/restart.txt'
 alias netstat="sudo lsof -i -P"
 alias ta='tmux a -t'
 alias ts='tmux switch -t'
+alias stree="/Applications/SourceTree.app/Contents/MacOS/SourceTree $(pwd)"
 
 export EDITOR=vim
 export GIT_EDITOR=${EDITOR}
