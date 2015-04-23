@@ -92,7 +92,7 @@ zstyle ':prezto:module:history-substring-search:color' not-found ''
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'pure'
+zstyle ':prezto:module:prompt' theme 'steeef'
 
 #
 # Ruby
@@ -176,11 +176,14 @@ alias qq='touch tmp/restart.txt'
 alias netstat="sudo lsof -i -P"
 alias ta='tmux a -t'
 alias ts='tmux switch -t'
-alias stree="/Applications/SourceTree.app/Contents/MacOS/SourceTree $(pwd)"
+alias stree="/Applications/SourceTree.app/Contents/MacOS/SourceTree \$(pwd)"
+alias prettyjson="ruby -rjson -e 'puts JSON.pretty_generate(JSON.parse(STDIN.read))'"
+alias vim="nvim"
 
-export EDITOR=vim
+export EDITOR=nvim
 export GIT_EDITOR=${EDITOR}
 export VISUAL=${EDITOR}
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # add boxen
 if [ -f /opt/boxen/env.sh ]; then
