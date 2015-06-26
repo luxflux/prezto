@@ -36,7 +36,6 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'ssh' \
   'history-substring-search' \
-  'ruby' \
   'git' \
   'tmux'
 
@@ -184,6 +183,15 @@ export EDITOR=nvim
 export GIT_EDITOR=${EDITOR}
 export VISUAL=${EDITOR}
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+# speed up rbenv init by adding --no-rehash
+function rbenv {
+  if [ "$1" = 'init' ]
+  then
+    set -- $* --no-rehash
+  fi
+  command rbenv $*
+}
 
 # add boxen
 if [ -f /opt/boxen/env.sh ]; then
