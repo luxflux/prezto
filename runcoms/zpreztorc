@@ -183,6 +183,9 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
+export GOPATH=$HOME/projects/go
+export GOROOT=/usr/local/opt/go/libexec
+
 # speed up rbenv init by adding --no-rehash
 function rbenv {
   if [ "$1" = 'init' ]
