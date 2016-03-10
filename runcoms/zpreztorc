@@ -184,6 +184,7 @@ alias ts='tmux switch -t'
 alias stree="/Applications/SourceTree.app/Contents/MacOS/SourceTree \$(pwd)"
 alias prettyjson="ruby -rjson -e 'puts JSON.pretty_generate(JSON.parse(STDIN.read))'"
 alias vim="nvim"
+alias buha="cd ~/projects/luxflux/buha && vim journal.ledger"
 
 export EDITOR=nvim
 export GIT_EDITOR=${EDITOR}
