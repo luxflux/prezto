@@ -187,7 +187,29 @@ alias vim="nvim"
 alias buha="cd ~/projects/luxflux/buha && vim journal.ledger"
 alias mutt="cd ~/Downloads && mutt"
 
-export EDITOR=nvim
+# GTD
+tickle () {
+  deadline=$1
+  shift
+  in +tickle wait:$deadline $@
+}
+waiting () {
+  id=$1
+  due=$2
+  wait=$3
+  text=$4
+  if [ -z "$id" ]; then echo "Usage: waiting id due wait text"; return; fi
+  if [ -z "$due" ]; then echo "Usage: waiting id due wait text"; return; fi
+  if [ -z "$wait" ]; then echo "Usage: waiting id due wait text"; return; fi
+  if [ -z "$text" ]; then echo "Usage: waiting id due wait text"; return; fi
+  task $id modify -in +waiting
+  task $id annotate "${text}" due:$due wait:$wait
+}
+alias in="task add +in"
+alias tick=tickle
+alias think="tickle +1d"
+
+export EDITOR="nvim"
 export GIT_EDITOR=${EDITOR}
 export VISUAL=${EDITOR}
 # export NVIM_TUI_ENABLE_TRUE_COLOR=1
