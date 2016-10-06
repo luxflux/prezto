@@ -217,6 +217,7 @@ export VISUAL=${EDITOR}
 # export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export ANDROID_HOME=/usr/local/opt/android-sdk
+export SOCKET_DIR=/tmp
 
 export GOPATH=$HOME/projects/go
 export GOROOT=/usr/local/opt/go/libexec
