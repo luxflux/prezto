@@ -37,7 +37,8 @@ zstyle ':prezto:load' pmodule \
   'ssh' \
   'history-substring-search' \
   'git' \
-  'tmux'
+  'ruby'
+  # 'tmux'
 
 #
 # Autosuggestions
@@ -222,19 +223,7 @@ export SOCKET_DIR=/tmp
 export GOPATH=$HOME/projects/go
 export GOROOT=/usr/local/opt/go/libexec
 
-# speed up rbenv init by adding --no-rehash
-function rbenv {
-  if [ "$1" = 'init' ]
-  then
-    set -- $* --no-rehash
-  fi
-  command rbenv $*
-}
-
-# add boxen
-if [ -f /opt/boxen/env.sh ]; then
-  source /opt/boxen/env.sh
-fi
+if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
 if [ -f ~/.zpreztorc.local ]; then
   source ~/.zpreztorc.local
